@@ -1,0 +1,53 @@
+<idea-plugin>
+  <id>com.smallville7123.simple.language.plugin</id>
+  <name>Kpp</name>
+  <version>1.0</version>
+  <vendor email="smallville7123@gmail.com" url="https://github.com/mgood7123">none</vendor>
+
+  <description><![CDATA[
+      Simple Language for IntelliJ.<br>
+      <em>40 characters 40 characters 40 characters</em>
+    ]]></description>
+
+  <change-notes><![CDATA[
+      None<br>
+      <em>40 characters 40 characters 40 characters</em>
+    ]]>
+  </change-notes>
+
+  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
+  <idea-version since-build="173.0"/>
+
+  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+       on how to target different products -->
+  <!-- uncomment to enable plugin in all products
+  <depends>com.intellij.modules.lang</depends>
+  -->
+
+  <extensions defaultExtensionNs="com.intellij">
+    <fileTypeFactory implementation="TWO.Language.and.File.Type.SimpleFileTypeFactory"/>
+    <lang.parserDefinition language="Simple" implementationClass="FOUR.Lexer.and.Parser.Definition.psi.SimpleParserDefinition"/>
+    <lang.syntaxHighlighterFactory language="Simple" implementationClass="FIVE.Syntax.Highlighter.and.Color.Settings.Page.SimpleSyntaxHighlighterFactory"/>
+    <colorSettingsPage implementation="FIVE.Syntax.Highlighter.and.Color.Settings.Page.SimpleColorSettingsPage"/>
+    <annotator language="JAVA" implementationClass="SEVEN.Annotator.SimpleAnnotator"/>
+    <codeInsight.lineMarkerProvider language="JAVA" implementationClass="EIGHT.Line.Marker.Provider.SimpleLineMarkerProvider"/>
+    <completion.contributor language="Simple" implementationClass="NINE.Completion.Contributor.SimpleCompletionContributor"/>
+    <psi.referenceContributor implementation="TEN.Reference.Contributor.SimpleReferenceContributor"/>
+    <lang.refactoringSupport language="Simple" implementationClass="TEN.Reference.Contributor.SimpleRefactoringSupportProvider"/>
+    <lang.findUsagesProvider language="Simple" implementationClass="ELEVEN.Find.Usages.Provider.SimpleFindUsagesProvider"/>
+    <lang.foldingBuilder language="JAVA" implementationClass="TWELVE.Folding.Builder.SimpleFoldingBuilder"/>
+    <gotoSymbolContributor implementation="THIRTEEN.Go.To.Symbol.Contributor.SimpleChooseByNameContributor"/>
+    <lang.psiStructureViewFactory language="Simple" implementationClass="FOURTEEN.Structure.View.Factory.SimpleStructureViewFactory"/>
+    <lang.formatter language="Simple" implementationClass="FIFTEEN.Formatter.SimpleFormattingModelBuilder"/>
+    <codeStyleSettingsProvider implementation="SIXTEEN.Code.Style.Setting.SimpleCodeStyleSettingsProvider"/>
+    <langCodeStyleSettingsProvider implementation="SIXTEEN.Code.Style.Setting.SimpleLanguageCodeStyleSettingsProvider"/>
+    <lang.commenter language="Simple" implementationClass="SEVENTEEN.Commenter.SimpleCommenter"/>
+  </extensions>
+
+  <actions>
+    <!-- Add your actions here -->
+  </actions>
+
+
+
+</idea-plugin>

@@ -1,0 +1,37 @@
+{
+  parserClass="THREE.Grammar.and.Parser.parser.SimpleParser"
+
+  extends="com.intellij.extapi.psi.ASTWrapperPsiElement"
+
+  psiClassPrefix="Simple"
+  psiImplClassSuffix="Impl"
+  psiPackage="THREE.Grammar.and.Parser.psi"
+  psiImplPackage="THREE.Grammar.and.Parser.psi.impl"
+
+  elementTypeHolderClass="THREE.Grammar.and.Parser.psi.SimpleTypes"
+  elementTypeClass="THREE.Grammar.and.Parser.psi.SimpleElementType"
+  tokenTypeClass="THREE.Grammar.and.Parser.psi.SimpleTokenType"
+  // SIX.PSI.Helpers.and.Utilities
+  psiImplUtilClass="SIX.PSI.Helpers.and.Utilities.psi.impl.SimplePsiImplUtil"
+}
+
+simpleFile ::= item_*
+
+private item_ ::= (property|COMMENT|CRLF)
+
+property ::= (KEY? SEPARATOR VALUE?) | KEY
+// SIX.PSI.Helpers.and.Utilities provides "methods", "getKey", and "getValue"
+// TEN.Reference.Contributor provides "mixin", "implements", "getName", "setName", and "getNameIdentifier"
+// THIRTEEN.Go.To.Symbol.Contributor provides "getPresentation"
+{
+    mixin="TEN.Reference.Contributor.psi.SimpleNamedElementImpl"
+    implements="TEN.Reference.Contributor.psi.SimpleNamedElement"
+    methods=[
+        getKey
+        getValue
+        getName
+        setName
+        getNameIdentifier
+        getPresentation
+    ]
+}
